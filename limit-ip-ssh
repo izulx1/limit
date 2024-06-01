@@ -14,7 +14,7 @@ Notifikasi Multilogin SSH
 <code>Limit IP :</code> <code>$2</code>
 <code>Login IP :</code> <code>$3</code>
 <code>☉────────────────────☉</code>
-<code >Auto Locked Account 60 Detik</code>
+<code >Auto Locked Account !!!</code>
 "
 
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
@@ -102,8 +102,6 @@ do
         # Mengunci pengguna multilogin
         passwd -l ${username[$i]};
         send-log "${username[$i]}" "$MAX" "${jumlah[$i]}"
-        sleep 60
-        passwd -u ${username[$i]};
 
         if [ $OS -eq 1 ]; then
             service ssh restart > /dev/null 2>&1;
